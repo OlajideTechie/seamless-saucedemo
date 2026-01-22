@@ -51,7 +51,7 @@ npm -v
 ## Environment Setup
 
 Create a `cypress.env.json` file:
-
+```bash
 {
   "validUser": {
     "username": "username",
@@ -62,6 +62,7 @@ Create a `cypress.env.json` file:
     "password": "password"
   }
 }
+```
 
 ## Project Setup & Installation
 ```bash 
