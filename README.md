@@ -37,7 +37,7 @@ package.json
 README.md
 ```
 
-## 🛠 Prerequisites
+## Prerequisites
 Make sure you have the following installed:
 - **Node.js** (v20 or later recommended)
 - **npm** (comes with Node.js)
@@ -48,18 +48,25 @@ node -v
 npm -v
 ```
 
-## ⚙️ Project Setup & Installation
+## Project Setup & Installation
+```bash 
 git clone https://github.com/OlajideTechie/seamless-saucedemo.git
 cd seamless-saucedemo
+```
 
 Install Dependencies
+```bash 
 npm install
+```
 
 Running the Tests
 
 Open Cypress Test Runner (Interactive Mode)
+```bash 
 npx cypress open
+```
 
-Tests in Headless Mode
-Open the terminal 
-npx cypress run
+Tests in Headless Mode, Open the terminal 
+```bash 
+npx run local:test
+```
