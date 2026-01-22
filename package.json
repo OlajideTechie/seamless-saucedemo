@@ -4,7 +4,7 @@
   "description": "This project demonstrates end-to-end test automation using **Cypress** with the **Page Object Model (POM)** design pattern.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run"
   },
   "author": "",
   "license": "ISC",
