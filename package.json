@@ -1,0 +1,14 @@
+{
+  "name": "seamless-saucedemo",
+  "version": "1.0.0",
+  "description": "This project demonstrates end-to-end test automation using **Cypress** with the **Page Object Model (POM)** design pattern.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.9.0"
+  }
+}
