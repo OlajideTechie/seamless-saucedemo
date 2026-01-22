@@ -28,7 +28,7 @@ cypress/
 │ │ ├── productsPage.js
 │ │ ├── cartPage.js
 │ │ ├── checkoutPage.js
-│ │ └── checkoutCompletePage.js
+│ │
 │ └── commands.js
 │
 cypress.config.js
@@ -39,14 +39,29 @@ README.md
 
 ## Prerequisites
 Make sure you have the following installed:
-- **Node.js** (v20 or later recommended)
-- **npm** (comes with Node.js)
+- **Node.js** (v20 or later)
+- **npm** (installs alongside Node.js)
 
 Check versions:
 ```bash
 node -v
 npm -v
 ```
+
+## Environment Setup
+
+Create a `cypress.env.json` file:
+
+{
+  "validUser": {
+    "username": "username",
+    "password": "password"
+  },
+  "invalidUser": {
+    "username": "username",
+    "password": "password"
+  }
+}
 
 ## Project Setup & Installation
 ```bash 
@@ -66,7 +81,7 @@ Open Cypress Test Runner (Interactive Mode)
 npx cypress open
 ```
 
-Tests in Headless Mode, Open the terminal 
+Run Test in Headless Mode, Open the terminal 
 ```bash 
-npx run local:test
+npx run test
 ```

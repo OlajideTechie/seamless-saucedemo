@@ -9,18 +9,28 @@ const products = new ProductsPage();
 const cart = new CartPage();
 const checkout = new CheckoutPage();
 
-describe('SauceDemo SwagLab UI Tests', () => {
+// Environment Variable
+const validUser = Cypress.env('validUser');
+const invalidUser = Cypress.env('invalidUser');
+
+const username = validUser.username;
+const password = validUser.password;
+
+const invalidUsername = invalidUser.username;
+const invalidPassword = invalidUser.password;
+
+describe('SauceDemo SwagLab UI Test Scenarios', () => {
 
   // Test Setup before each test
   beforeEach(function () {
-    cy.fixture('users').as('users');
     cy.fixture('checkout').as('checkout');
     cy.fixture('cart_items').as('cart_items');
+    login.visit();
   });
 
-  it('Positive login and checkout flow', function () {
-    login.visit();
-    login.login(this.users.validUser.username, this.users.validUser.password);
+  it('Customer login and checkout flow', function () {
+
+    login.login(username, password);
 
     //validate user is routed to the products page
     cy.url().should('include', '/inventory.html');
@@ -66,9 +76,15 @@ describe('SauceDemo SwagLab UI Tests', () => {
     products.logout();
   });
 
-  it.skip('Negative login scenario', function () {
-    login.visit();
-    login.login(this.users.invalidUser.username, this.users.invalidUser.password);
-    login.elements.errorMsg().should('contain.text', 'Epic sadface');
+  it('Incorrect login details', function () {
+    login.login(invalidUsername, invalidPassword);
+    login.elements.errorMsg().should('contain.text', ' Username and password do not match any user in this service');
+  });
+
+  it('Login without credentials', function () {
+    login.clickLoginOnly();
+    login.elements.errorMsg()
+    .should('be.visible')
+    .and('contain.text', 'Username is required');
   });
 });
