@@ -84,5 +84,5 @@ npx cypress open
 
 Run Test in Headless Mode, Open the terminal 
 ```bash 
-npx run test
+npm run test
 ```
